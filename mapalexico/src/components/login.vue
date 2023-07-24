@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <h1>Inicio de sesión</h1>
+      <h1 >Inicio de sesión</h1>
       <v-form @submit="login">
         <v-text-field v-model="username" label="Nombre de usuario"></v-text-field>
         <v-text-field v-model="password" label="Contraseña" type="password"></v-text-field>
@@ -46,6 +46,7 @@
   .container {
     margin-top: 4%;
     overflow: hidden;
+    background-color: white;
   }
   
   .error-message {
