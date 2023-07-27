@@ -19,9 +19,9 @@ Vue.use(Vuetify)
 const router = new VueRouter ({
   mode: 'history',
   routes: [
-    { path: '/', component: login },
-    { path: '/inicio', component: inicio},
-    { path: '/configuracion', component: config}
+    { path: '/mapalexico', component: login},
+    { path: '/mapalexico/inicio', component: inicio},
+    { path: '/mapalexico/configuracion', component: config}
 
   ]
 

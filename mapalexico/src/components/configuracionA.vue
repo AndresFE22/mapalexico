@@ -130,11 +130,14 @@ export default {
 
   methods: {
     volverAInicio() {
-      this.$router.push('/inicio');  
+      this.$router.push('/mapalexico/inicio');  
     },
 
     mostrarVista(vista) {
   this.vistaActual = vista;
+  if (vista === 'administrar'){
+    this.obtenerPalabras();
+  }
 
 },
 
@@ -146,7 +149,8 @@ export default {
         comunasSeleccionadas: this.comunasSeleccionadas
       };
 
-      axios.post('http://localhost:5000/api/palabras', nuevoTermino)
+      //axios.post('http://localhost:5000/api/palabras', nuevoTermino)
+      axios.post('https://cuentaapi.pythonanywhere.com/api/palabras', nuevoTermino)
         .then(response => {
           this.messagenew = response.data.message;
         setTimeout(() => {
@@ -170,7 +174,9 @@ export default {
 },
 
     obtenerPalabras() {
-  axios.get('http://localhost:5000/api/terminos')
+  //axios.get('http://localhost:5000/api/terminos')
+  axios.get('https://cuentaapi.pythonanywhere.com/api/terminos')
+
     .then(response => {
       const palabrasObject = {};
 
@@ -200,7 +206,8 @@ export default {
       comunasSeleccionadas: this.comunasSeleccionadasagregar
     };
 
-    axios.post('http://localhost:5000/api/palabras/editar', palabraEditada)
+    //axios.post('http://localhost:5000/api/palabras/editar', palabraEditada)
+    axios.post('https://cuentaapi.pythonanywhere.com/api/palabras/editar', palabraEditada)
       .then(response => {
         this.messageadd = response.data.message
         setTimeout(() => {
@@ -225,7 +232,8 @@ export default {
       palabraEditada: this.palabraEditada,
       comunasSeleccionadas: this.comunasSeleccionadaseliminar
     };
-    axios.post('http://localhost:5000/api/palabras/eliminar', palabraEliminada)
+    //axios.post('http://localhost:5000/api/palabras/eliminar', palabraEliminada)
+    axios.post('https://cuentaapi.pythonanywhere.com/api/palabras/eliminar', palabraEliminada)
     .then(response => {
       this.messagequit = response.data.message
       setTimeout(() => {
@@ -263,6 +271,15 @@ export default {
   bottom: 20px;
   right: 20px;
 }
+
+@media (max-width: 500px) {
+  .home-button {
+    position: relative;
+    bottom: -1px;
+    right: -1px;
+  }
+}
+
 
 .title {
   font-size: 24px;

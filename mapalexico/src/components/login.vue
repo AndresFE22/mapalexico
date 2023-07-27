@@ -26,11 +26,8 @@
     name: 'loginL',
     methods: {
       login() {
-        // Aquí puedes realizar la validación del inicio de sesión con las credenciales proporcionadas
-        // Por simplicidad, utilizaremos credenciales predefinidas para el ejemplo
         if (this.username === 'usuario' && this.password === 'contraseña') {
-          // Redirigir al usuario a la página de inicio después del inicio de sesión exitoso
-          this.$router.push('/inicio');
+          this.$router.push('/mapalexico/inicio');
         } else {
           this.showError = true;
           setTimeout(() => {

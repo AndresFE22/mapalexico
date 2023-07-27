@@ -6,7 +6,7 @@
 <br>de la ciudad de Montería</v-toolbar-title>
 <v-spacer></v-spacer>
 
-        <v-btn icon to="/configuracion">
+        <v-btn v-if="showIcon" icon to="/mapalexico/configuracion">
           <v-icon color="white">mdi-account</v-icon>
         </v-btn>
       </v-app-bar>
@@ -23,6 +23,11 @@
 export default {
   name: 'App',
   components: {
+  },
+  computed: {
+    showIcon() {
+      return this.$route.path !== '/mapalexico'
+    },
   }
 }
 </script>

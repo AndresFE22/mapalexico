@@ -15,6 +15,6 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:AndresFE22/mapalexico.git main:gh-pages
+git push -f git@github.com:AndresFE22/mapalexico.git master:gh-pages
 
 cd -

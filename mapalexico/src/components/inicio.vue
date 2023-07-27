@@ -107,7 +107,8 @@ export default {
     },
     obtenerPalabrasPorComuna(comuna) {
       axios
-        .get(`http://localhost:5000/api/comunas/${comuna}/palabras`)
+        /*.get(`http://localhost:5000/api/comunas/${comuna}/palabras`)*/
+        .get(`https://cuentaapi.pythonanywhere.com/api/comunas/${comuna}/palabras`)
         .then(response => {
           console.log(response.data);
           this.palabras = response.data;
@@ -164,11 +165,19 @@ border-radius: 20px;
   font-size: large;
   padding: 2%;
   color: white;
+  
 }
 
 .word-box {
   background-color: rgb(67, 164, 255);
   border-radius: 20px;
+}
+
+.word-container {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 }
 
 </style>
